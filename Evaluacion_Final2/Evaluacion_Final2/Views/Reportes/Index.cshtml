@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Evaluacion_Final2.Models.Disco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<h2>Reportes Generales</h2>
+<br />
+<br />
+<a class="btn btn-primary" data-target="#Reporte" onclick="listaDisco()"
+   data-toggle="modal">Imprimir Reporte de Discos</a>
+<br />
+<br />
+<br />
+
+<a class="btn btn-primary" data-target="#Reporte1" onclick="listaInformacion()"
+   data-toggle="modal">Imprimir Reporte Informacion</a>
+<br />
+
+
+<div class="modal fade" id="Reporte" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Lista de Discos
+                </h4>
+            </div>
+            <div class="modal-body" id="Imprimir_Disco">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Capacidad
+                            </th>
+                            <th>
+                                Tipo
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Cuerpo_Disco"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary"
+                        onclick="quitar_Botones1(); Imprimir_Disco()">
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Reporte1" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Lista de Informacion
+                </h4>
+            </div>
+            <div class="modal-body" id="Imprimir_Informacion">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Ubicacion
+                            </th>
+                            <th>
+                                Detalle
+                            </th>
+                            <th>
+                                Tamaño
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Fecha
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Cuerpo_Informacion"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary"
+                        onclick="quitar_Botones1(); Imprimir_Informacion()">
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Evaluacion_Final2.Models.Disco>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lista de Discos</h2>
+
+<p>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#Ingreso_Disco">Nuevo Disco</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Capacidad
+            </th>
+            <th>
+                Tipo
+            </th>
+        </tr>
+    </thead>
+    <tbody id="Cuerpo_Disco"></tbody>
+</table>
+
+<div class="modal fade" id="Ingreso_Disco" tabindex="-1" role="dialog" aria-labelledby="EtiquetaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="EtiquetaModal">
+                    Ingreso de Discos
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="idDisco" id="idDisco" />
+                    <div class="form-group">
+                        <label class="control-label">Nombre</label>
+                        <input id="Nombre" name="Nombre" class="form-control"
+                               type="text" placeholder="Ingrese la Nombre del disco" />
+                        <span class="label-danger hidden">Campo Obligatorio</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Capacidad</label>
+                        <input id="Capacidad" name="Capacidad" class="form-control"
+                               type="text" placeholder="Ingrese la Capacidad del disco" />
+                        <span id="control_Nombre" class="label-danger hidden">La Capacidad es requerida</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Tipo</label>
+                        <input id="Tipo" name="Tipo" class="form-control"
+                               type="text" placeholder="Ingrese el Tipo del disco" />
+                        <span id="control_Capacidad" class="label-danger hidden">El Tipo es requerido</span>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Cerrar</button>
+                <button id="graba" type="button" class="btn btn-primary" onclick="nuevo_Disco()">Guardar</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,39 @@
+﻿@model Evaluacion_Final2.Models.Ubicacion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Ubicacion</h2>
+
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Detalle
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+        <dt>
+           Disco
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Disco.Nombre)
+        </dd>
+        <dt>
+           Informacion
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Informacion.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="idUbicacion" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+      
+    </form>
+</div>

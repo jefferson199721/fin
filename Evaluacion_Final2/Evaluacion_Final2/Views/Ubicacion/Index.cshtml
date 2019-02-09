@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Evaluacion_Final2.Models.Ubicacion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Ingreso de Ubicacion</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Nueva Ubicacion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Detalle
+            </th>
+            <th>
+            Disco
+            </th>
+            <th>
+           Informacion
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disco.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Informacion.Nombre)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.idUbicacion">Editar</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.idUbicacion">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
